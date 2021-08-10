@@ -17,5 +17,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/',[App\Http\Controllers\fileUploadController::class,'view']);
+Route::get('/admin',[App\Http\Controllers\fileUploadController::class,'view']);
 Route::post('/fileUp',[App\Http\Controllers\fileUploadController::class,'fileUpload']);
+
+Route::get('/',[App\Http\Controllers\userController::class,'view']);
+Route::get('/getData',[App\Http\Controllers\userController::class,'getData']);
+Route::get('/download/{folderPath}/{fileName}',[App\Http\Controllers\userController::class,'download']);
